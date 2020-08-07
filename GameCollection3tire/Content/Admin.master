@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Content_Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="color: white;">
+
+            <asp:HyperLink runat="server" ID="hlGameCollection" Text="Game Collection" CssClass="navbar-brand" NavigateUrl="~/Default.aspx" />
+
+            <div class="collapse navbar-collapse" style="color: black;">
+                <ul class="navbar-nav mr-auto" style="color: black;">
+                    <li class="nav-item active">
+                        <asp:HyperLink runat="server" ID="hlGame" CssClass="nav-link" Text="Game" NavigateUrl="~/AdminPanel/Game/GameList.aspx" /></li>
+                    <li class="nav-item active">
+                        <asp:HyperLink runat="server" ID="hlGameCategory" CssClass="nav-link" Text="Category" NavigateUrl="~/AdminPanel/GameCategory/GameCategoryList.aspx" /></li>
+                    <li class="nav-item active">
+                        <asp:HyperLink runat="server" ID="hlGameCreator" CssClass="nav-link" Text="Creator" NavigateUrl="~/AdminPanel/GameCreator/GameCreatorList.aspx" /></li>
+                    <li class="nav-item active">
+                        <asp:HyperLink runat="server" ID="hlGameDevice" CssClass="nav-link" Text="Device" NavigateUrl="~/AdminPanel/GameDevice/GameDeviceList.aspx" /></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <asp:Label ID="lblUserName" CssClass="nav-link" runat="server"></asp:Label></li>
+                    <li class="nav-item active">
+                        <asp:LinkButton ID="lbtnlogout" runat="server" CssClass="nav-link bg-danger" Text="LogOut" CausesValidation="false" OnClick="lbtnlogout_Click"></asp:LinkButton></li>
+                </ul>
+            </div>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="cphContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="cphScripts" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+</body>
+</html>
